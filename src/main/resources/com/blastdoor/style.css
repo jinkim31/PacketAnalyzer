@@ -1,0 +1,97 @@
+.root
+{
+    -fx-font-family: "Roboto";
+    -fx-background : white;
+    -fx-light-color : #eeeeee;
+    -fx-component-color : #455A64;
+}
+.text
+{
+    -fx-font-smoothing-type: gray;
+}
+
+.label
+{
+    -fx-text-fill: #5e5e5e;
+}
+
+.button
+{
+    -fx-background-color: #eeeeee;
+    -fx-text-fill: #5e5e5e;
+    -fx-background-insets: 0;
+}
+
+.button:hover
+{
+    -fx-background-color: derive(-fx-color, -20%);
+}
+.button:pressed
+{
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 2, 2 );;
+}
+
+.combo-box
+{
+    -fx-background-color: #eeeeee;
+}
+
+.combo-box > .list-cell {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+}
+
+.text-field
+{
+    -fx-background-color: #eeeeee;
+    -fx-text-fill: black;
+}
+
+.accordion > .titled-pane > .title {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+.accordion > .first-titled-pane > .title {
+    -fx-background-insets: 0, 1, 2;
+}
+
+.titled-pane {
+    -fx-color : -fx-background;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+}
+
+.titled-pane > .title {
+    -fx-background-color: white;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0;
+    -fx-padding: 5 10 5 20;
+}
+
+
+.titled-pane .content
+{
+    -fx-border-width: 0;
+    -fx-background-color: white;
+}
+
+.text-area,
+.text-area .content
+{
+    -fx-background-radius: 0;
+    -fx-background-color: #eeeeee;
+    -fx-text-fill: black;
+}
+
+.spinner
+{
+    -fx-background-color: #eeeeee;
+}
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-body-color: #eeeeee;
+    -fx-background-insets: 0;
+}

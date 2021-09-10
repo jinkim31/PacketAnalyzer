@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@style.css" type="BorderPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <TextArea fx:id="termTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 18; -fx-font-family: Consolas;" wrapText="true" BorderPane.alignment="CENTER">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color opacity="0.20000000298023224" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </TextArea>
+   </center>
+   <top>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="40.0">
+               <children>
+                  <Button fx:id="scanButton" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#scanButtonClicked" prefHeight="26.0" style="-fx-background-radius: 10 0 0 10;">
+                     <graphic>
+                        <Pane maxHeight="20.0" maxWidth="20.0" minHeight="0.0" minWidth="0.0" prefHeight="20.0" prefWidth="20.0" style="-fx-shape: &quot;M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z&quot;; -fx-background-color: #5e5e5e;" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <ComboBox fx:id="portComboBox" maxHeight="1.7976931348623157E308" prefHeight="25.0" prefWidth="200.0" promptText="Select a port" style="-fx-font-size: 15; -fx-background-radius: 0;">
+                     <HBox.margin>
+                        <Insets left="1.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="baudComboBox" maxHeight="1.7976931348623157E308" prefHeight="25.0" prefWidth="150.0" style="-fx-font-size: 15; -fx-background-radius: 0 10 10 0;">
+                     <HBox.margin>
+                        <Insets left="1.0" />
+                     </HBox.margin>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </ComboBox>
+                  <Button fx:id="openButton" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#openButtonClicked" pickOnBounds="false" prefHeight="26.0" style="-fx-background-radius: 10; -fx-background-color: #2979FF; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 15;" text="Open">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Region HBox.hgrow="ALWAYS" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="writeHBox" disable="true" prefHeight="40.0">
+               <children>
+                  <ComboBox fx:id="writeStyleComboBox" maxHeight="1.7976931348623157E308" prefHeight="25.0" prefWidth="100.0" style="-fx-font-size: 15; -fx-background-radius: 10 0 0 10;">
+                     <HBox.margin>
+                        <Insets bottom="1.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <TextField fx:id="sendTextField" maxHeight="1.7976931348623157E308" promptText="Write Data" style="-fx-background-radius: 0; -fx-font-size: 15; -fx-font-family: Consolas;" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="1.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <ComboBox fx:id="byteEndOptionComboBox" layoutX="596.0" layoutY="10.0" maxHeight="1.7976931348623157E308" prefHeight="25.0" prefWidth="130.0" style="-fx-font-size: 15; -fx-background-radius: 0;">
+                     <HBox.margin>
+                        <Insets left="1.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="newlineComboBox" maxHeight="1.7976931348623157E308" prefHeight="25.0" prefWidth="130.0" style="-fx-font-size: 15; -fx-background-radius: 0;">
+                     <HBox.margin>
+                        <Insets bottom="1.0" left="1.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <Button fx:id="sendButton" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#sendButtonClicked" prefHeight="26.0" style="-fx-font-size: 15; -fx-background-radius: 0 10 10 0; -fx-background-color: #2979FF; -fx-text-fill: white; -fx-font-weight: bold;" styleClass="button_blue" text="Send">
+                     <HBox.margin>
+                        <Insets left="1.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="addMacroButton" mnemonicParsing="false" onAction="#addMacroButtonClicked" prefHeight="26.0" style="-fx-background-color: transparent;" styleClass="button_icon">
+                     <graphic>
+                        <Pane maxHeight="25.0" maxWidth="30.0" minHeight="25.0" minWidth="30.0" prefHeight="25.0" prefWidth="30.0" style="-fx-shape: &quot;M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z&quot;; -fx-background-color: #5e5e5e;" translateY="2.0" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+            <Label fx:id="instructionLabel" style="-fx-font-size: 12;" text="Instruction">
+               <padding>
+                  <Insets bottom="20.0" left="30.0" top="2.0" />
+               </padding>
+            </Label>
+            <TitledPane fx:id="macroPane" disable="true" expanded="false" maxHeight="300.0" style="-fx-background-radius: 0; -fx-border-radius: 0;" text="Macro">
+               <content>
+                  <ScrollPane fitToHeight="true" fitToWidth="true">
+                     <content>
+                        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                           <children>
+                              <HBox fx:id="macroInfoHBox" style="-fx-background-color: #dddddd; -fx-background-radius: 5;">
+                                 <children>
+                                    <Pane maxHeight="15.0" maxWidth="20.0" minHeight="0.0" minWidth="0.0" prefHeight="15.0" prefWidth="20.0" style="-fx-shape: &quot;M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z&quot;; -fx-background-color: #5e5e5e;" />
+                                    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-alignment: center;" text=" 를 클릭하여 매크로를 추가하십시오. 반복 주기가 0일경우 한 번만 전송합니다." />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                              <VBox fx:id="macroVBox" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </TitledPane>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="10.0">
+               <children>
+                  <ComboBox fx:id="readOptionComboBox" prefWidth="150.0" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label maxHeight="1.7976931348623157E308" text="Lines visible" />
+                  <Spinner fx:id="lineSpinner" />
+                  <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearButtonClicked" text="Clear" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</fx:root>
